@@ -9,8 +9,9 @@ const app = express();
 // Make the server able to parse json
 app.use(express.json());
 
-// Extend request to route file 
-app.use('api/v1/users', userRouter); // route http://localhost:4000/api/v1/users
-// app.use('api/v1/posts', postRouter);
+// Extend request to route file
+app.use('/api/v1/users', userRouter);
+
+// example route: http://localhost:4000/api/v1/users/register
 
 export default app;
