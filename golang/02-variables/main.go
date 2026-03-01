@@ -16,7 +16,21 @@ func main() {
 	// Best practice - unless you have a good reason to, stick to following types:
 	// bool, string, int, uint32, byte, rune, float64, complex128
 
-	// Variables declaration
+	// Best practice - a float cannot represent a decimal value exactly, so do not use them to represent money or similar value
+
+	// Integer operators
+	// arithmetic:				+ - * / %
+	// combine:						+= -= *= /= %=
+	// comparison:				== != > >= < <=
+	// bit manipulation: 	<< >>
+	// logical:						& | ^ *^
+
+	// String and rune operators
+	// comparison:				== !=
+	// ordering:					> >= < <=
+	// concenate:					+
+
+	// Variables declaration will assign a default zero value to any variable without assigned value
 	var smsSendingLimit int
 	var costPerSMS float64
 	var hasPermission bool
@@ -30,7 +44,7 @@ func main() {
 		username,
 	)
 
-	// Shorter declaration
+	// Short declaration with type inference
 	congrats := "Happy birthday" // inferred to be a string
 	numCars := 10                // inferred to be an integer
 	temperature := 0.0           // inferred to be a float
@@ -45,8 +59,7 @@ func main() {
 
 	// Type inference
 	penniesPerText := 2.0
-	fmt.Printf("The type of penniesPerText is %T\n", penniesPerText)
-	// return "The type of penniesPerText is float64"
+	fmt.Printf("The type of penniesPerText is %T\n", penniesPerText) // %T => float64"
 
 	// Multiple initialization on the same line
 	mileage, company := 80276, "Tesla"
@@ -58,19 +71,27 @@ func main() {
 	// Type conversion
 	accountAge := 2.6
 	accountAgeInt := int(accountAge)
-
 	fmt.Println("Your account has existed for", accountAgeInt, "years")
 
-	// Constants
-	// Cannot be reassigned, but can be computed during compilation
+	// Constants cannot be reassigned
 	const premiumPlanName = "Premium Plan"
 	// premiumPlanName = "Basic Plan"
-	// return Compile time error: cannot assign to constant
+	// return "compile time error: cannot assign to constant"
 	const basicPlanName = "Basic Plan"
-
 	fmt.Println("plan", premiumPlanName)
 	fmt.Println("plan", basicPlanName)
 
+	// A typed constant (e.g. const x int) can only be directly assigned to a variable of that type
+	// const x = "test"
+	// const typedX int = x => compile time error
+
+	// Unused variables will not be by compiler, but will be detected by golangci-lint
+	// x := 10
+	// x = 20
+	// fmt.Println(x)
+	// x = 30
+
+	// Constants can be computed during compilation
 	const secondInMinute = 60
 	const minutesInHour = 60
 	const secondsInHour = secondInMinute * minutesInHour
@@ -97,12 +118,10 @@ func main() {
 
 	const name = "Saul Goodman"
 	const openRate = 30.5
-
 	msg := fmt.Sprintf(
 		"Hi %s your open rate is %.1f percent",
 		name,
 		openRate,
 	)
-
 	fmt.Println(msg)
 }

@@ -14,9 +14,11 @@ func main() {
 	// return Error: cannot concenate string and int
 }
 
-// Go is compiled language
+// Golangci-lint is a fast, parallel-running aggregate linter for Go.
+// golangci-lint run main.go
 
-// go run hello.go
-// go build -o hello.exe hello.go
+// Go is compiled language
+// go run main.go
+// go build -o hello.exe main.go
 
 // Go is garbage collected with Go runtime but without virtual machine like Java
