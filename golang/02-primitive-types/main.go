@@ -1,62 +1,62 @@
+// ----------------------------------------------------------------------
+// Basic variables													| 	Description							|
+// ----------------------------------------------------------------------
+// bool																			| 	true/false							|
+// string																		| 	text										|
+// int 	int8 	int16 	int32 	int64					| 	whole numbers						|
+// uint uint8 uint32 	uint64 				  			| 	positive whole numbers	|
+// uintptr																	| 	pointer arithmetic			|
+// float32 		float64												| 	decimal numbers					|
+// complex64 	complex128										| 	imaginary numbers				|
+// ----------------------------------------------------------------------
+
+// ------------------------------------------
+// Type			| 	Min/MaxValue								|
+// ------------------------------------------
+// int8			|		-/+ 128											|
+// int16		| 	-/+ 32768										|
+// int32  	|		-/+ 2^31 (~2 billion)				|
+// int64		|		-/+ 2^63										|
+// float32	|		-1.18*10^38 	+3.4*10^38		|
+// float64	|		-2.23*10^308	+1.8*10^308		|
+// ------------------------------------------
+
+// --------------------------------------------------------------------------------------------------------------
+// Type			|		Alias												|		Description																											|
+// --------------------------------------------------------------------------------------------------------------
+// Byte			|		uint8												|																																		|
+// Rune			|		int32												|																																		|
+// int			|		int32/int64  								|		unicode code point or a char; 32/64 depends on OS architecture	|
+// uint			|		uint32/int64								|		32/64 depends on OS architecture																|
+// --------------------------------------------------------------------------------------------------------------
+
+// Best practice - unless you have a good reason to, stick to: bool, string, int, uint, byte, rune, float64, complex128
+// Best practice - a float cannot represent a decimal value exactly, so do not use them to represent money or similar value
+
+// Integer operators
+// arithmetic						+ - * / %
+// assignment						+= -= *= /= %=
+// unary								++ -- - + !
+// comparison						== != > >= < <=
+// bitwise 							<< >> & | ^ &^
+// logical							&& || !
+
+// String operators and built-in functions
+// comparison						== != > >= < <=
+// ordering							> >= < <=
+// concenate						+
+// len(string)					count chars in string
+// string[i]						access char in string
+
 package main
 
 import "fmt"
 
 func main() {
 
-	// ----------------------------------------------------------------------
-	// Basic variables													| 	Description							|
-	// ----------------------------------------------------------------------
-	// bool																			| 	true/false							|
-	// string																		| 	text										|
-	// int 	int8 	int16 	int32 	int64					| 	whole numbers						|
-	// uint uint8 uint32 	uint64 				  			| 	positive whole numbers	|
-	// uintptr																	| 	pointer arithmetic			|
-	// float32 		float64												| 	decimal numbers					|
-	// complex64 	complex128										| 	imaginary numbers				|
-	// ----------------------------------------------------------------------
-
-	// ------------------------------------------
-	// Type			| 	Min/MaxValue								|
-	// ------------------------------------------
-	// int8			|		-/+ 128											|
-	// int16		| 	-/+ 32768										|
-	// int32  	|		-/+ 2^31 (~2 billion)				|
-	// int64		|		-/+ 2^63										|
-	// float32	|		-1.18*10^38 	+3.4*10^38		|
-	// float64	|		-2.23*10^308	+1.8*10^308		|
-	// ------------------------------------------
-
-	// --------------------------------------------------------------------------------------------------------------
-	// Type			|		Alias												|		Description																											|
-	// --------------------------------------------------------------------------------------------------------------
-	// Byte			|		uint8												|																																		|
-	// Rune			|		int32												|																																		|
-	// int			|		int32/int64  								|		unicode code point or a char; 32/64 depends on OS architecture	|
-	// uint			|		uint32/int64								|		32/64 depends on OS architecture																|
-	// --------------------------------------------------------------------------------------------------------------
-
-	// Best practice - unless you have a good reason to, stick to: bool, string, int, uint, byte, rune, float64, complex128
-	// Best practice - a float cannot represent a decimal value exactly, so do not use them to represent money or similar value
-
-	// Integer operators
-	// arithmetic						+ - * / %
-	// assignment						+= -= *= /= %=
-	// unary								++ -- - + !
-	// comparison						== != > >= < <=
-	// bitwise 							<< >> & | ^ &^
-	// logical							&& || !
-
-	// String operators and built-in functions
-	// comparison						== != > >= < <=
-	// ordering							> >= < <=
-	// concenate						+
-	// len(string)					count chars in string
-	// string[i]						access char in string
-
 	// Variables declaration
-	// Go compiler will assign a default zero value to any variable without assigned value
-	// Go compiler will detect unused variables, so we need to use blank identifier for an unused variable
+	// Go's compiler will assign a default zero value to any variable without assigned value
+	// Go's compiler will detect unused variables, so we need to use blank identifier for an unused variable
 
 	// Single declaration
 	var smsSendingLimit int
@@ -134,7 +134,7 @@ func main() {
 	fmt.Println("plan", basicPlanName)
 
 	// A typed constant can only be directly assigned to a variable of that type
-	// The following code will return compile time error
+	// The following code will return compile time error:
 	// const untypedString = "test"; const typedInt int = untypedString;
 
 	// Constants can be computed during compilation
