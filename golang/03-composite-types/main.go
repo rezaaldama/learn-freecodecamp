@@ -102,8 +102,11 @@ func main() {
 
 	// A common bug for new Go developers is to try to make an int into a string by using a type conversion:
 	var xInt int = 65
-	var xStr = string(xInt)         // return "65" is intended
-	fmt.Println(xStr)               // return "A" instead
+	var xStr = string(xInt) // return "65" is intended
+	fmt.Println(xStr)       // return "A" instead
+
+	xStr = fmt.Sprint(xInt)
+	fmt.Println(xStr)               // return "65" with Sprint(), or
 	fmt.Println(strconv.Itoa(xInt)) // return "65" with strconv library
 
 	// ---------------------------------------------------------------------------------------------------------------------
